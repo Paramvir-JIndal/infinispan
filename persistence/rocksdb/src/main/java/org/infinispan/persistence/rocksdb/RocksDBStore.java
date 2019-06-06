@@ -761,7 +761,6 @@ public class RocksDBStore<K,V> implements SegmentedAdvancedLoadWriteStore<K,V> {
 
                 db.write(dataWriteOptions(), batch);
             } finally {
-                batch.close();
                 semaphore.release();
             }
         }
